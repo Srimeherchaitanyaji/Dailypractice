@@ -40,5 +40,10 @@ driver.find_element(By.XPATH,"//input[@id = 'first_name']").send_keys("abc")
 driver.find_element(By.ID,"last_name").send_keys("zxc")
 driver.find_element(By.ID,"company").send_keys("nvbg")
 driver.find_element(By.ID,"address1").send_keys("dfghfk 345")
-
+driver.find_element(By.ID, 'country').send_keys("Australia")
+driver.find_element(By.ID,"state").send_keys("telangana")
+driver.find_element(By.ID,"city").send_keys("Hyderabad")
+driver.find_element(By.ID,"zipcode").send_keys("336473")
+driver.find_element(By.ID,"mobile_number").send_keys("98765425637")
+driver.find_element(By.XPATH,"//button[@data-qa = 'create-account']").click()
 
