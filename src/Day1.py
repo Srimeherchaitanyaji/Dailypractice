@@ -46,4 +46,16 @@ driver.find_element(By.ID,"city").send_keys("Hyderabad")
 driver.find_element(By.ID,"zipcode").send_keys("336473")
 driver.find_element(By.ID,"mobile_number").send_keys("98765425637")
 driver.find_element(By.XPATH,"//button[@data-qa = 'create-account']").click()
+actual_confirmation_text = "ACCOUNT CREATED!"
+expected_confirmation_text = driver.find_element(By.TAG_NAME,"b").text
+if actual_confirmation_text == expected_confirmation_text:
+    print("Account created,PASS")
 
+driver.find_element(By.XPATH,"//a[contains(text(),'Continue')]").click()
+time.sleep(5)
+verify_user_login_name1 = driver.find_element(By.XPATH,"//a[contains(text(),' Logged in as ')]").text
+if "chaitanya" in verify_user_login_name1:
+    print("Pass")
+
+
+driver.find_element(By.XPATH,"//a[contains(text(),' Delete Account')]").click()
