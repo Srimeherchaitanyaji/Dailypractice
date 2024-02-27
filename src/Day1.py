@@ -58,4 +58,4 @@ if "chaitanya" in verify_user_login_name1:
     print("Pass")
 
 
-driver.find_element(By.XPATH,"//a[contains(text(),' Delete Account')]").click()
+#driver.find_element(By.XPATH,"//a[contains(text(),' Delete Account')]").click()
