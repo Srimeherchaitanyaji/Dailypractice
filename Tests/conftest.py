@@ -1,8 +1,11 @@
 from selenium import webdriver
 import pytest
 
+from Pages.Registration_and_login_page import Registration_and_Login_Page
+from config.config import TestData
 
-@pytest.fixture
+
+@pytest.fixture(scope = 'class')
 def init_driver(request):
     web_driver = webdriver.Chrome()
     request.cls.driver = web_driver
