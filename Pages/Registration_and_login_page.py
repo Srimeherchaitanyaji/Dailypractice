@@ -48,5 +48,10 @@ class Registration_and_Login_Page(Basepage):
         email_field_found = self.findelement(self.LOGIN_EMAILFIELD)
         password_field_found = self.findelement(self.LOGIN_PASSWORDFIELD)
         return email_field_found and password_field_found
+    
+    def login_placeholders(self):
+        email_placeholder = self.findelement(self.LOGIN_PLACEHOLDER)
+        password_placeholder = self.findelement(self.LOGIN_PASSWORD_PLACEHOLDER)
+        return email_placeholder and password_placeholder
         
 

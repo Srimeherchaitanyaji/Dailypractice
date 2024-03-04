@@ -24,7 +24,11 @@ class Test_registration_and_login_page(Basetest):
         self.R_L_page.do_click(self.R_L_page.LOGIN_SIGNUP_PAGE_OPTION)
         assert self.R_L_page.find_loginfields
 
-    #def test_RL005(self):
+    def test_RL005(self):
+        self.R_L_page = Registration_and_Login_Page(self.driver)
+        self.R_L_page.do_click(self.R_L_page.LOGIN_SIGNUP_PAGE_OPTION)
+        assert self.R_L_page.login_placeholders
+        
 
 
 
