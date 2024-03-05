@@ -14,9 +14,12 @@ class Basepage():
 
     def get_text(self, locator):
         try:
-            Text = self.driver.find_element(locator).text
+            element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+            Text = element.text
+            print(Text)
             return Text
         except Exception as E:
+            print(E)
             return E
     
     def is_enabled(self, locator):
@@ -29,9 +32,13 @@ class Basepage():
         except Exception as E:
             return E
     
-    def is_visible(self, text):
-        element = WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element(text))
-        return self.driver.text
+    def is_visible(self, locator, text):
+        try:
+            element = WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element_attribute(locator,text))
+            return element
+        except Exception as e:
+            print(e)
+            return False
     
     def findelement(self, locator):
         try:

@@ -9,7 +9,7 @@ class Registration_and_Login_Page(Basepage):
     EMAIL_ID = (By.XPATH, "//input[@data-qa = 'signup-email']")
     SIGNUP_BUTTON = (By.XPATH, "//button[@data-qa = 'signup-button']")
     SIGNUP_TITLE = (By.XPATH, "//h2[text() = 'New User Signup!']")
-    SIGIN_TITLE = (By.XPATH, "//div[@class = 'login-form']//h2")
+    SIGNIN_TITLE = (By.XPATH, "//div[@class = 'login-form']//h2")
     LOGIN_SIGNUP_PAGE_OPTION = (By.XPATH, "//a[@href = '/login']")
     LOGIN_EMAILFIELD = (By.XPATH, "//input[@data-qa = 'login-email']")
     LOGIN_PASSWORDFIELD = (By.XPATH, "//input[@data-qa = 'login-password']")
@@ -20,6 +20,7 @@ class Registration_and_Login_Page(Basepage):
     SIGNUP_EMAIL_PLACEHOLDER = (By.XPATH, "//form[@action = '/signup']//input[@placeholder = 'Email Address']")
     LOGO = (By.XPATH, "//a//img")
     PAGE_TITLE = (By.XPATH, "//title")
+    OR_text = (By.XPATH, "//h2[contains(text(), 'OR')]")
 
 
 
@@ -28,8 +29,9 @@ class Registration_and_Login_Page(Basepage):
         super().__init__(driver)
         self.driver.get(TestData.BASE_URL)
 
-    def get_headings(self, text):
-        return self.get_text(text)
+    def get_headings(self, locator):
+        heading = self.get_text(locator)
+        return heading
     
     def do_signup(self, username, email):
         self.do_send_keys(self.NAME, username)
@@ -53,5 +55,30 @@ class Registration_and_Login_Page(Basepage):
         email_placeholder = self.findelement(self.LOGIN_PLACEHOLDER)
         password_placeholder = self.findelement(self.LOGIN_PASSWORD_PLACEHOLDER)
         return email_placeholder and password_placeholder
+    
+    def find_login_button(self):
+        return self.findelement(self.LOGIN_BUTTON)
+    
+    def find_signupfields(self):
+        username_field = self.findelement(self.NAME)
+        emailid_field = self.findelement(self.EMAIL_ID)
+        return username_field and emailid_field
+    
+    def signup_placeholders(self):
+        username_placeholder = self.findelement(self.SIGNUP_NAME_PLACEHOLDER)
+        email_placehloder = self.findelement(self.SIGNUP_EMAIL_PLACEHOLDER)
+        return username_placeholder and email_placehloder
+    
+    def find_signup_button(self):
+        return self.findelement(self.SIGNUP_BUTTON)
+    
+    def find_logo(self):
+        return self.findelement(self.LOGO)
+    
+    def find_OR_text(self):
+        return self.findelement(self.find_OR_text)
+
+
+
         
 
