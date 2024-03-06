@@ -21,7 +21,10 @@ class Registration_and_Login_Page(Basepage):
     LOGO = (By.XPATH, "//a//img")
     PAGE_TITLE = (By.XPATH, "//title")
     OR_text = (By.XPATH, "//h2[contains(text(), 'OR')]")
-
+    subscription_text = (By.XPATH, "//h2[contains(text(), 'Subscription')]")
+    subscription_mail_field = (By.XPATH, "//input[@id = 'susbscribe_email']")
+    subscription_placeholder = (By.XPATH, "//input[@placeholder = 'Your email address']")
+    subscribe_button = (By.ID, "subscribe")
 
 
 
@@ -77,6 +80,19 @@ class Registration_and_Login_Page(Basepage):
     
     def find_OR_text(self):
         return self.findelement(self.find_OR_text)
+    
+    def find_subscription_text(self):
+        return self.findelement(self.subscription_text)
+    
+    def find_subscription_placeholder(self):
+        return self.findelement(self.subscription_placeholder)
+    
+    def find_subscription_emailfield(self):
+        return self.findelement(self.subscription_mail_field)
+    
+    def find_subscribe_button(self):
+        return self.findelement(self.subscribe_button)
+
 
 
 
