@@ -9,6 +9,9 @@ class TestData:
     SIGNUP_EMAIL = "zxcv@gmail.com"
     USERNAME = "zxcv"
 
+    INVALID_LOGIN_EMAIL = "werv@gmail.com"
+    INVALID_PASSWORD = "7890"
+
     LOGIN_EMAIL = "zxcv@gmail.com"
     PASSWORD = "1234"
 
