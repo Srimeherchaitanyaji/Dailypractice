@@ -25,6 +25,8 @@ class Registration_and_Login_Page(Basepage):
     subscription_mail_field = (By.XPATH, "//input[@id = 'susbscribe_email']")
     subscription_placeholder = (By.XPATH, "//input[@placeholder = 'Your email address']")
     subscribe_button = (By.ID, "subscribe")
+    ERROR_MESSAGE = (By.XPATH, "//p[contains(text(), 'incorrect')]")
+    SIGNUP_ERRORMESSAGE = (By.XPATH, "//p[contains(text(), 'exist')]")
 
 
 
@@ -92,6 +94,13 @@ class Registration_and_Login_Page(Basepage):
     
     def find_subscribe_button(self):
         return self.findelement(self.subscribe_button)
+    
+    def find_errormessage(self):
+        return self.get_text(self.ERROR_MESSAGE)
+    
+    def find_signup_errormessage(self):
+        return self.get_text(self.SIGNUP_ERRORMESSAGE)
+
 
 
 

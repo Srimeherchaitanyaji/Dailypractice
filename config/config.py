@@ -16,3 +16,9 @@ class TestData:
     PASSWORD = "1234"
 
     PAGETITLE = "Automation Exercise - Signup / Login"
+
+    ERROR_MESSAGE = "Your email or password is incorrect!"
+    SIGNUP_ERRORMESSAGE = "Email Address already exist!"
+
+    NAVBAR_OPTIONS = ['Home', 'Products', 'Cart', 'Signup / Login', 'Test Cases', 'API Testing', 'Video Tutorials', 'Contact us']
+    

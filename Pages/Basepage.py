@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 class Basepage():
 
@@ -16,7 +17,6 @@ class Basepage():
         try:
             element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
             Text = element.text
-            print(Text)
             return Text
         except Exception as E:
             print(E)
@@ -46,3 +46,12 @@ class Basepage():
             return True
         except:
             return False
+        
+    def findelements(self, by, value):
+        try:
+            elements = self.driver.find_elements(by,value)
+            #print(type(elements))
+            return elements
+        except Exception as e:
+            print(e)
+            return e
