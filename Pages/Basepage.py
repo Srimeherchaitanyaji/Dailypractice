@@ -49,7 +49,7 @@ class Basepage():
         
     def findelements(self, by, value):
         try:
-            elements = self.driver.find_elements(by,value)
+            elements = self.driver.find_elements(by, value)
             #print(type(elements))
             return elements
         except Exception as e:

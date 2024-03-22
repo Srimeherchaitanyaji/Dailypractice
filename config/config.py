@@ -21,4 +21,5 @@ class TestData:
     SIGNUP_ERRORMESSAGE = "Email Address already exist!"
 
     NAVBAR_OPTIONS = ['Home', 'Products', 'Cart', 'Signup / Login', 'Test Cases', 'API Testing', 'Video Tutorials', 'Contact us']
+    CATEGORY_OPTIONS = ['WOMEN', 'MEN', 'KIDS']
     

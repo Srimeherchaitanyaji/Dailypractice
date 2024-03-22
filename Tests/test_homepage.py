@@ -18,6 +18,12 @@ class Test_homepage(Basetest):
         expected_options = TestData.NAVBAR_OPTIONS
         assert actual_options == expected_options
 
+    def test_HP003(self):
+        actual_options = self.homepage.find_categoryitems()
+        expected_options = TestData.CATEGORY_OPTIONS
+        assert actual_options == expected_options
+
+
         
 
 
