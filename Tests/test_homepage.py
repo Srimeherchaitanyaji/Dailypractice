@@ -23,6 +23,12 @@ class Test_homepage(Basetest):
         expected_options = TestData.CATEGORY_OPTIONS
         assert actual_options == expected_options
 
+    def test_HP004(self):
+        actual_options = self.homepage.find_branditems()
+        expected_options = TestData.BRAND_ITEMS
+        assert actual_options == expected_options
+
+
 
         
 

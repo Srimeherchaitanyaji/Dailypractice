@@ -22,4 +22,5 @@ class TestData:
 
     NAVBAR_OPTIONS = ['Home', 'Products', 'Cart', 'Signup / Login', 'Test Cases', 'API Testing', 'Video Tutorials', 'Contact us']
     CATEGORY_OPTIONS = ['WOMEN', 'MEN', 'KIDS']
+    BRAND_ITEMS = ['POLO', 'H&M', 'MADAME', 'MAST & HARBOUR', 'BABYHUG', 'ALLEN SOLLY JUNIOR', 'KOOKIE KIDS', 'BIBA']
     

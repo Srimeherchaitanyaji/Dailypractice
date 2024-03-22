@@ -7,6 +7,8 @@ class Homepage(Basepage):
     
     NAVBAR_OPTIONS =  ("//ul[@class = 'nav navbar-nav']/li/a")
     CATEGORY_LIST = ("//h4[@class = 'panel-title']")
+    BRAND_LIST = ("//ul[@class = 'nav nav-pills nav-stacked']//li")
+    FEATURES_ITEMS = ("//div[@class = 'features_items']//div[@class = 'product-image-wrapper']")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -26,6 +28,16 @@ class Homepage(Basepage):
         for i in options:
             element = i.text
             ls.append(element)
+        return ls
+    
+    def find_branditems(self):
+        print("branditems method")
+        ls = []
+        options = self.findelements(By.XPATH, self.BRAND_LIST)
+        for i in options:
+            element = i.text
+            ls.append(element[3:].strip())
+        print(ls)
         return ls
     
     
