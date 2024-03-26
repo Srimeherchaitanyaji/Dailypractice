@@ -31,14 +31,14 @@ class Homepage(Basepage):
         return ls
     
     def find_branditems(self):
-        print("branditems method")
         ls = []
         options = self.findelements(By.XPATH, self.BRAND_LIST)
         for i in options:
             element = i.text
             ls.append(element[3:].strip())
-        print(ls)
         return ls
+    
+    
     
     
 

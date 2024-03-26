@@ -3,9 +3,10 @@ import pytest
 class TestRunner:
     def __init__(self):
         self.pytest_args = [
-            #"Tests/test_registrationandloginpage.py",
+            "Tests/test_registrationandloginpage.py",
             "Tests/test_homepage.py",
-            "-v"
+            "-v",
+            "--html=./e-commerce.html"
         ]
     
     def run_tests(self):

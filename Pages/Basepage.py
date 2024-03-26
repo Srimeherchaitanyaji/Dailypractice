@@ -22,9 +22,9 @@ class Basepage():
             print(E)
             return E
     
-    def is_enabled(self, locator):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
-        return bool(element)
+    def isenabled(self, locator):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).is_enabled()
+        return element
     
     def get_title(self, title):
         try:
