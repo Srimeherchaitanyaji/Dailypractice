@@ -6,7 +6,7 @@ class TestRunner:
             "Tests/test_registrationandloginpage.py",
             "Tests/test_homepage.py",
             "-v",
-            "--html=./e-commerce.html"
+            #"--html=./e-commerce.html"
         ]
     
     def run_tests(self):
