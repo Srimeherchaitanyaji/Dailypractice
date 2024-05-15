@@ -48,6 +48,21 @@ class Homepage(Basepage):
             ls.append((element,))
         return ls.sort()
     
+    def check_items_and_prices(self):
+        ls1 = []
+        ls2 = []
+        options1 = self.findelements(By.XPATH, self.FEATURES_ITEMS_TEXT)
+        options2 = self.findelements(By.XPATH, self.FEATURES_ITEMS_PRICE)
+        for i in options1:
+            element = i.text
+            ls1.append(element.lower())
+        for j in options2:
+            element = j.text
+            ls2.append(int(element[3:].strip()))
+        items_dict = dict(zip(ls1,ls2))
+        return items_dict
+
+    
         
     
     
