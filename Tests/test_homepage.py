@@ -35,6 +35,10 @@ class Test_homepage(Basetest):
         actual_items = self.homepage.items()
         assert actual_items == expected_items
         
+    def test_HP006(self):
+        expected_output = self.database.items_and_prices()
+        actual_output = self.homepage.check_items_and_prices()
+        assert actual_output == expected_output
 
 
 

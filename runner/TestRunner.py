@@ -5,7 +5,7 @@ class TestRunner:
         self.pytest_args = [
             #"Tests/test_registrationandloginpage.py",
             "Tests/test_homepage.py",
-            "-v",
+            "-vv",
             #"--html=./e-commerce.html"
         ]
     

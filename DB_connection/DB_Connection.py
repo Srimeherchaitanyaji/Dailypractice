@@ -17,6 +17,15 @@ class DB:
         cur.execute("SELECT item FROM master")
         rows = cur.fetchall()
         return rows.sort()
+    
+    def items_and_prices(self):
+        my_database = DB.db_connect(self)
+        cur = my_database.cursor()
+        cur.execute("SELECT lower(item),item_price from master")
+        rows = cur.fetchall()
+        d = dict(rows)      
+        return d  
+        
         
 if __name__ == "__main__":
     e_commerce_DB = DB()
