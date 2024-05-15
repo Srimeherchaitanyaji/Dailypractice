@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from DB_connection.DB_Connection import DB
 from Pages.Basepage import Basepage
 from config.config import TestData
 
@@ -8,7 +9,8 @@ class Homepage(Basepage):
     NAVBAR_OPTIONS =  ("//ul[@class = 'nav navbar-nav']/li/a")
     CATEGORY_LIST = ("//h4[@class = 'panel-title']")
     BRAND_LIST = ("//ul[@class = 'nav nav-pills nav-stacked']//li")
-    FEATURES_ITEMS = ("//div[@class = 'features_items']//div[@class = 'product-image-wrapper']")
+    FEATURES_ITEMS_TEXT = ("//div[@class = 'features_items']//div[@class = 'productinfo text-center']//p")
+    FEATURES_ITEMS_PRICE = ("//div[@class = 'features_items']//div[@class = 'productinfo text-center']//h2")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -38,6 +40,15 @@ class Homepage(Basepage):
             ls.append(element[3:].strip())
         return ls
     
+    def items(self):
+        ls = []
+        options = self.findelements(By.XPATH, self.FEATURES_ITEMS_TEXT)
+        for i in options:
+            element = i.text
+            ls.append((element,))
+        return ls.sort()
+    
+        
     
     
     

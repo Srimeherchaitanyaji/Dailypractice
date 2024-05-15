@@ -4,6 +4,7 @@ import pytest
 
 
 
+
 @pytest.fixture(scope = 'class')
 def init_driver(request):
     web_driver = webdriver.Chrome()

@@ -2,6 +2,7 @@
 import pytest
 from Pages.Homepage import Homepage
 from Tests.test_basetest import Basetest
+from DB_connection.DB_Connection import DB
 from config.config import TestData
 
 
@@ -9,6 +10,7 @@ from config.config import TestData
 @pytest.fixture(scope="class")
 def Home_page(request):
     request.cls.homepage = Homepage(request.cls.driver)
+    request.cls.database = DB()
 
 @pytest.mark.usefixtures("Home_page")
 class Test_homepage(Basetest):
@@ -28,7 +30,11 @@ class Test_homepage(Basetest):
         expected_options = TestData.BRAND_ITEMS
         assert actual_options == expected_options
 
-    
+    def test_HP005(self):
+        expected_items = self.database.select_items()
+        actual_items = self.homepage.items()
+        assert actual_items == expected_items
+        
 
 
 
