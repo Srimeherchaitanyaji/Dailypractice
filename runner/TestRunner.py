@@ -9,7 +9,7 @@ class TestRunner:
             os.path.join(tests_dir, "test_registrationandloginpage.py"),
             os.path.join(tests_dir, "test_homepage.py"),
             "-vv",
-            #"--html=./e-commerce.html"
+            "--html=./e-commerce.html"
         ]
     
     def run_tests(self):

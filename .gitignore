@@ -1,5 +1,6 @@
 # Created by pytest automatically.
 venv/*
+e-commerce.html
 .pytest_cache
 __pycache__
 .env
