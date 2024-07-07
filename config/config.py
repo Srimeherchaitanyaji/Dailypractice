@@ -1,6 +1,6 @@
 
 class TestData:
-
+    DRIVER_PATH = './driver/chromedriver/chromedriver'
     BASE_URL = "https://automationexercise.com/"
 
     LOGIN_HEADING = "Login to your account"
