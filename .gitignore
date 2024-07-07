@@ -1,0 +1,8 @@
+# Created by pytest automatically.
+venv/*
+.pytest_cache
+__pycache__
+.env
+.idea/*
+/shelf/
+/workspace.xml

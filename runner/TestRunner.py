@@ -1,10 +1,13 @@
 import pytest
+import os
 
 class TestRunner:
     def __init__(self):
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+        tests_dir = os.path.join(base_dir, 'Tests')
         self.pytest_args = [
-            #"Tests/test_registrationandloginpage.py",
-            "Tests/test_homepage.py",
+            os.path.join(tests_dir, "test_registrationandloginpage.py"),
+            os.path.join(tests_dir, "test_homepage.py"),
             "-vv",
             #"--html=./e-commerce.html"
         ]
