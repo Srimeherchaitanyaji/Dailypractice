@@ -6,3 +6,5 @@ __pycache__
 .idea/*
 /shelf/
 /workspace.xml
+.DS_Store
+*.html
